@@ -11,4 +11,13 @@ CZKChange <- function(M){
 }
 
 
+CZKChange_v2 <- function(M,d){
+  M <- c(M)
+  num <- c()
+  for (i in 1:length(d)){
+    num[i] <- floor(M[i]/d[i])
+    M[i+1] <- M[i]%%d[i]
+  }
+  return(num)
+}
 
